@@ -2,7 +2,7 @@
 
 Code examples for the "Modernizing .NET" article series.
 
-![Modernizing .NET series cover](assets/series-cover.png)
+![Modernizing .NET series cover](assets/series-cover-2026.png)
 
 ## From Legacy to Linux
 
