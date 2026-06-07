@@ -1,0 +1,8 @@
+FROM rockylinux:9
+
+RUN dnf install -y unixODBC-devel curl && \
+    curl https://sfc-repo.snowflakecomputing.com/odbc/linux/3.14.0/... -o /tmp/snowflake.rpm && \
+    dnf -y --nogpgcheck localinstall /tmp/snowflake.rpm
+
+COPY config/odbcinst.ini /app/config/odbc/odbcinst.ini
+COPY config/odbc.ini /app/config/odbc/odbc.ini

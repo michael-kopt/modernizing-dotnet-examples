@@ -1,0 +1,8 @@
+FROM rockylinux:9
+
+RUN dnf remove unixODBC-utf16 unixODBC-utf16-devel -y && \
+    dnf install -y unixODBC-devel && \
+    ACCEPT_EULA=Y yum install -y msodbcsql18 mssql-tools18
+
+COPY config/odbcinst.ini /app/config/odbc/odbcinst.ini
+COPY config/odbc.ini /app/config/odbc/odbc.ini

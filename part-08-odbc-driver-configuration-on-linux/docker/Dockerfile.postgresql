@@ -1,0 +1,6 @@
+FROM rockylinux:9
+
+RUN dnf install -y unixODBC-devel postgresql-odbc
+
+COPY config/odbcinst.ini /app/config/odbc/odbcinst.ini
+COPY config/odbc.ini /app/config/odbc/odbc.ini

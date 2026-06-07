@@ -1,0 +1,8 @@
+FROM rockylinux:9
+
+RUN dnf install -y unixODBC-devel curl && \
+    curl https://s3.amazonaws.com/redshift-downloads/drivers/odbc/2.1.12/... -o /tmp/redshift.rpm && \
+    dnf -y --nogpgcheck localinstall /tmp/redshift.rpm
+
+COPY config/odbcinst.ini /app/config/odbc/odbcinst.ini
+COPY config/odbc.ini /app/config/odbc/odbc.ini
