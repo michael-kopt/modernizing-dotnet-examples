@@ -1,0 +1,6 @@
+@SharedContextSample_HostAddress = http://localhost:5249
+
+GET {{SharedContextSample_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
