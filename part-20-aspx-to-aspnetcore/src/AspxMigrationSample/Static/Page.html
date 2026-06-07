@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title id="title">Page Administration</title>
+</head>
+<body style="font-family: Arial, sans-serif;" onload="loadPage()" id="body" hidden>
+    <div id="errorBox"></div>
+
+    <form action="/Page.aspx" enctype="multipart/form-data" id="mainform" method="post" name="mainform">
+        <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+        <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+
+        <div>
+            <span style="font-weight: bold; font-size: larger;">
+                Space: <span id="SpaceLabel"></span>
+            </span>
+        </div>
+        <div>ID: <span id="SpaceID"></span></div>
+        <div>Schema: <span id="Schema"></span></div>
+        <div>Directory: <span id="DirectoryID"></span></div>
+        <div>User: <span id="CurrentUser"></span></div>
+        <div>Version: <span id="Version"></span></div>
+        <div>Date: <span id="DateLabel"></span></div>
+
+        <div id="ProductDiv">
+            <h3>Products</h3>
+            <table border="1" cellpadding="4">
+                <thead>
+                    <tr>
+                        <th>Product Id</th>
+                        <th>Account Type</th>
+                        <th>Product Name</th>
+                    </tr>
+                </thead>
+                <tbody id="Products"></tbody>
+            </table>
+        </div>
+
+        <div style="margin-top: 1rem;">
+            <a href="javascript:__doPostBack('GetPage','')" id="GetPage">Download Page Export</a>
+        </div>
+    </form>
+
+    <script>
+        function loadPage() {
+            let formAction = document.getElementById("mainform").action;
+            const queryParams = window.location.href.split("?")[1];
+            if (queryParams) {
+                formAction = `${formAction}?${queryParams}`;
+            }
+
+            const formData = new FormData();
+            formData.append("__EVENTTARGET", "GetData");
+
+            fetch(formAction, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("body").removeAttribute("hidden");
+                document.getElementById("SpaceLabel").textContent = data.spaceLabel;
+                document.getElementById("SpaceID").textContent = data.spaceID;
+                document.getElementById("Schema").textContent = data.schema;
+                document.getElementById("DirectoryID").textContent = data.directoryID;
+                document.getElementById("CurrentUser").textContent = data.currentUser;
+                document.getElementById("Version").textContent = data.version;
+                document.getElementById("DateLabel").textContent = data.dateLabel;
+
+                if (data.pageDetails === false) {
+                    document.getElementById("ProductDiv").remove();
+                    document.getElementById("title").textContent = "Page Lite";
+                } else {
+                    let rows = "";
+                    for (const product of data.products) {
+                        rows += `<tr><td>${product.productId}</td><td>${product.accountType}</td><td>${product.productName}</td></tr>`;
+                    }
+                    document.getElementById("Products").innerHTML = rows;
+                }
+            })
+            .catch(error => prepareErrorBox(error.message));
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("mainform").addEventListener("submit", function (event) {
+                prepareErrorBox(null);
+                event.preventDefault();
+
+                const clickedTarget = document.getElementById("__EVENTTARGET").value;
+                let formAction = event.target.action;
+                const queryParams = window.location.href.split("?")[1];
+                if (queryParams) {
+                    formAction = `${formAction}?${queryParams}`;
+                }
+
+                const formData = new FormData(event.target);
+                formData.set("__EVENTTARGET", clickedTarget);
+
+                if (clickedTarget === "GetPage") {
+                    fetch(formAction, {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => response.blob().then(blob => ({ response, blob })))
+                    .then(({ response, blob }) => {
+                        const url = window.URL.createObjectURL(blob);
+                        const anchor = document.createElement("a");
+                        anchor.href = url;
+                        anchor.download = "PageExport.zip";
+                        document.body.appendChild(anchor);
+                        anchor.click();
+                        window.URL.revokeObjectURL(url);
+                        document.body.removeChild(anchor);
+                    })
+                    .catch(error => prepareErrorBox(error.message));
+                }
+            });
+        });
+
+        function __doPostBack(eventTarget, eventArgument) {
+            document.getElementById("__EVENTTARGET").value = eventTarget;
+            document.getElementById("__EVENTARGUMENT").value = eventArgument;
+            document.getElementById("mainform").dispatchEvent(new Event("submit", { cancelable: true }));
+        }
+
+        function prepareErrorBox(message) {
+            const errorBox = document.getElementById("errorBox");
+            if (message) {
+                errorBox.innerHTML = `<div style="color:red; padding:10px; border:1px solid red;">${message}</div>`;
+            } else {
+                errorBox.innerHTML = "";
+            }
+        }
+    </script>
+</body>
+</html>
