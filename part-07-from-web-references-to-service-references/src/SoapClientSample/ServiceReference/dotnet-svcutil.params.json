@@ -1,0 +1,18 @@
+{
+  "providerId": "Microsoft.Tools.ServiceModel.Svcutil",
+  "version": "8.0.0",
+  "options": {
+    "inputs": [
+      "SoapService.wsdl"
+    ],
+    "namespaceMappings": [
+      "*, Part07.SoapClientSample.ServiceReference"
+    ],
+    "outputFile": "Reference.cs",
+    "serializerMode": "XmlSerializer",
+    "sync": true,
+    "targetFramework": "net10.0",
+    "typeReuseMode": "All",
+    "wrapped": true
+  }
+}
