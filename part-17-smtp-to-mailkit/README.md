@@ -1,6 +1,6 @@
 # Part 17: Migrating SMTP Email to MailKit
 
-Article: [Modernizing .NET - Part 17 Migrating SMTP Email to MailKit](https://medium.com/@michael.kopt)
+Article: [Modernizing .NET - Part 17 Migrating SMTP Email to MailKit](https://medium.com/@michael.kopt/modernizing-net-part-17-migrating-smtp-email-to-mailkit-68b17e8a743f)
 
 This sample demonstrates a practical migration from legacy `System.Net.Mail` usage to `MailKit` and `MimeKit`. It keeps a familiar wrapper surface so existing application code can stay close to the old API while the transport is modernized underneath.
 

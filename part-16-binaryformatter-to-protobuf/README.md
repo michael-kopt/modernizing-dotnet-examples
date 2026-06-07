@@ -1,6 +1,6 @@
 # Part 16: Replacing BinaryFormatter with protobuf-net
 
-Article: [Modernizing .NET - Part 16 Replacing BinaryFormatter with protobuf-net](https://medium.com/@michael.kopt)
+Article: [Modernizing .NET - Part 16 Replacing BinaryFormatter with protobuf-net](https://medium.com/@michael.kopt/%EF%B8%8F-modernizing-net-part-16-replacing-binaryformatter-with-protobuf-net-for-speed-and-security-f5cc5db8055a)
 
 This sample demonstrates the practical migration path from `BinaryFormatter` to `protobuf-net` in modern .NET. It focuses on the common replacement scenarios from the article: session-style byte storage, file persistence, inheritance, and version-tolerant reads.
 

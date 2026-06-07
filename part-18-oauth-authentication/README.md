@@ -1,6 +1,6 @@
 # Part 18: OAuth Authentication in ASP.NET Core
 
-Article: [Modernizing .NET - Part 18 OAuth Authentication in ASP.NET Core](https://medium.com/@michael.kopt)
+Article: [Modernizing .NET - Part 18 OAuth Authentication in ASP.NET Core](https://medium.com/@michael.kopt/modernizing-net-part-18-oauth-authentication-in-asp-net-core-6f77ed506a7d)
 
 This sample demonstrates the migration architecture from the article: fix request scheme detection behind a reverse proxy, preserve a custom callback URL, extract claims into ASP.NET Core authentication, and create a user session. It uses a fully local fake OAuth provider so the flow is runnable without external credentials.
 
