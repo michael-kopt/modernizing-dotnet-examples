@@ -1,0 +1,20 @@
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5889
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: D:\Projects\modernizing-dotnet-examples\part-23-log4net-migration\src\Log4NetMigrationSample
+info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://localhost:5889/demo?userId=jane.doe&tenantId=tenant-42&sessionId=sess-123&operationId=op-9001 - - -
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'HTTP: GET /demo'
+INFO 2026-06-07 21:09:39,SSSZ [EventTime=1780859379393] [thread=11] [jane.doe,tenant-42,sess-123,op-9001] jane.doe,tenant-42,op-9001 - Request started
+INFO 2026-06-07 21:09:39,SSSZ [EventTime=1780859379393] [thread=11] [jane.doe,tenant-42,sess-123,op-9001] jane.doe,tenant-42,op-9001 - After await
+info: Microsoft.AspNetCore.Http.Result.JsonResult[3]
+      Writing value of type '<>f__AnonymousType0`2' as Json.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'HTTP: GET /demo'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://localhost:5889/demo?userId=jane.doe&tenantId=tenant-42&sessionId=sess-123&operationId=op-9001 - 200 - application/json;+charset=utf-8 92.6857ms
