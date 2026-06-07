@@ -1,6 +1,6 @@
 # Part 21: Migrating WebDAV Server Functionality to .NET Core
 
-Article: [Modernizing .NET - Part 21 Migrating WebDAV Server Functionality to .NET Core](https://medium.com/@michael.kopt)
+Article: [Modernizing .NET - Part 21 Migrating WebDAV Server Functionality to .NET Core](https://medium.com/@michael.kopt/modernizing-net-part-21-migrating-webdav-server-functionality-to-net-core-2770bca6f374)
 
 This sample demonstrates the ASP.NET Core side of the migration pattern from the article: expose WebDAV behavior through a controller-like endpoint, support non-standard HTTP verbs, and keep the request-processing logic separate from the routing layer.
 

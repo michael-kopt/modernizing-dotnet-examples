@@ -1,6 +1,6 @@
 # Part 20: Migrating Legacy ASPX Pages to ASP.NET Core
 
-Article: [Modernizing .NET - Part 20 Migrating Legacy ASPX Pages to ASP.NET Core](https://medium.com/@michael.kopt)
+Article: [Modernizing .NET - Part 20 Migrating Legacy ASPX Pages to ASP.NET Core](https://medium.com/@michael.kopt/%EF%B8%8F-modernizing-net-part-20-migrating-legacy-aspx-pages-to-asp-net-core-d855946c3db0)
 
 This sample demonstrates the hybrid migration pattern from the article: keep a legacy `.aspx` route for compatibility, serve a static HTML shell for the UI, and handle postback-style interactions through ASP.NET Core endpoints that return JSON or files.
 
