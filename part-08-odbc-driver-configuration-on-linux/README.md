@@ -4,7 +4,7 @@ Article: [Modernizing .NET - Part 8: ODBC Driver Configuration on Linux](https:/
 
 This sample is configuration-focused rather than application-focused. It shows how to structure Linux ODBC setup for multiple vendors and includes a tiny `.NET` smoke test that verifies whether `System.Data.Odbc` can open a connection.
 
-## Layout
+## Structure
 
 - `config/odbcinst.ini` contains example unixODBC driver registrations
 - `config/odbc.ini` contains example DSNs
@@ -13,7 +13,7 @@ This sample is configuration-focused rather than application-focused. It shows h
 - `docker/` contains example Dockerfile fragments for each driver
 - `src/OdbcSmokeTest` is a minimal console app that attempts to open an ODBC connection
 
-## Key Files
+## Implementation Notes
 
 unixODBC driver definitions:
 
@@ -29,7 +29,7 @@ Environment variables:
 - `ODBCSYSINI`
 - `AMAZONREDSHIFTODBCINI`
 
-## Smoke Test
+## Run
 
 Build and run:
 

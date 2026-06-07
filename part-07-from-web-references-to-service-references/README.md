@@ -4,7 +4,7 @@ Article: [Modernizing .NET - Part 7: From Web References to Service References](
 
 This sample demonstrates the migration path from classic `.NET Framework` Web References to a generated `.NET` SOAP client created with `dotnet-svcutil`.
 
-## Key Idea
+## Sample Focus
 
 The article's pattern is:
 
@@ -17,13 +17,13 @@ This sample includes both sides:
 - a small CoreWCF host that publishes `SoapService.asmx`
 - a console client that consumes the service through a generated `Reference.cs`
 
-## Project Layout
+## Structure
 
 - `src/SoapServiceHost` hosts a SOAP service and records incoming headers and cookies
 - `src/SoapClientSample` contains the generated service reference and a wrapper around it
 - `dotnet-tools.json` pins `dotnet-svcutil` locally for this sample
 
-## What The Sample Shows
+## Implementation Notes
 
 The client wrapper demonstrates:
 

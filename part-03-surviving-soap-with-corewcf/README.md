@@ -4,7 +4,7 @@ Article: [Modernizing .NET - Part 3: Surviving SOAP with CoreWCF](https://medium
 
 This sample shows the basic migration path from a legacy `.asmx` or WCF-style SOAP endpoint to a CoreWCF service hosted in `.NET 8`.
 
-## Key Idea
+## Sample Focus
 
 The article describes three essential steps:
 
@@ -20,13 +20,13 @@ The contract in this sample follows the same pattern as the article, including:
 
 That combination is the important part when you want CoreWCF to behave more like classic .NET Framework SOAP services.
 
-## Project Layout
+## Structure
 
 - `src/CoreWcfSoapSample/Contracts/ISoapService.cs` defines the SOAP contract
 - `src/CoreWcfSoapSample/Services/SoapServiceController.cs` implements the service
 - `src/CoreWcfSoapSample/Program.cs` wires CoreWCF into the ASP.NET Core pipeline
 
-## What The Sample Does
+## Implementation Notes
 
 The service exposes:
 
@@ -71,6 +71,6 @@ SOAPAction: "http://www.namespace.com/Login"
 </soap:Envelope>
 ```
 
-## Caveat
+## Notes
 
 This is the functional starting point, not full .NET Framework parity. As the article notes, WSDL shape, metadata pages, and validation behavior still need extra work.

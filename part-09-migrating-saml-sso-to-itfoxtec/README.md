@@ -4,7 +4,7 @@ Article: [Modernizing .NET - Part 9: Migrating SAML SSO to ITfoxtec](https://med
 
 This sample shows the core migration pattern from a legacy SAML integration to `ITfoxtec.Identity.Saml2` in ASP.NET Core.
 
-## Key Idea
+## Sample Focus
 
 The article centers on three moving parts:
 
@@ -12,14 +12,14 @@ The article centers on three moving parts:
 - a response handler that reads `SAMLResponse` from the posted form
 - an ACS endpoint that validates the response, extracts claims, logs what matters, and redirects using `RelayState`
 
-## Project Layout
+## Structure
 
 - `Configuration/SamlOptions.cs` contains app-level SAML settings
 - `Services/SamlConfigurationProvider.cs` builds `Saml2Configuration`
 - `Services/SamlResponseHandler.cs` reads and validates the posted SAML response
 - `Controllers/SamlController.cs` exposes the ACS endpoint
 
-## Endpoints
+## Implementation Notes
 
 - `POST /saml/acs`
 - `GET /saml/config-summary`

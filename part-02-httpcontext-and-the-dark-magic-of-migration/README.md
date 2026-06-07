@@ -4,7 +4,7 @@ Article: [Modernizing .NET - Part 2: HttpContext and the Dark Magic of Migration
 
 This sample demonstrates the compatibility shim from the article: recreating `System.Web.HttpContext.Current` in `.NET 8` so legacy code can continue to access request state without immediate DI refactoring.
 
-## Key Idea
+## Sample Focus
 
 The article's core pattern is:
 
@@ -35,13 +35,13 @@ services.AddHttpContextAccessor();
 System.Web.HttpContext.Configure(app.Services.GetRequiredService<IHttpContextAccessor>());
 ```
 
-## Project Layout
+## Structure
 
 - `src/HttpContextShimSample` is a minimal ASP.NET Core app
 - `Legacy/LegacyRequestReader.cs` simulates old code that accesses `System.Web.HttpContext.Current`
 - `SystemWeb/HttpContext.cs` contains the compatibility shim
 
-## What The Sample Shows
+## Implementation Notes
 
 - a request handled through a legacy-style static access pattern
 - request data read without injecting `IHttpContextAccessor` into the legacy class
@@ -62,6 +62,6 @@ Then open:
 
 Both endpoints return request details collected through `System.Web.HttpContext.Current`.
 
-## Caveat
+## Notes
 
 This is a migration bridge, not a long-term design target. It helps keep large legacy codebases moving while you gradually replace static request access with proper dependency injection.

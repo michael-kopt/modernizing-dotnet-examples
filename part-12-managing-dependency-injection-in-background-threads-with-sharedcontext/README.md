@@ -1,14 +1,16 @@
 # Part 12: Managing Dependency Injection in Background Threads with SharedContext
 
+Article: [Modernizing .NET - Part 12 Managing Dependency Injection in Background Threads with SharedContext](https://medium.com/@michael.kopt/modernizing-net-part-12-managing-dependency-injection-in-background-threads-with-sharedcontext-19c66938fedf)
+
 This sample demonstrates the migration pattern from the article: capture an `IApiClientFactory` during an HTTP request, store it in thread-local state, and reuse it from legacy background entry points that cannot resolve services from ASP.NET Core DI directly.
 
-## What We Can Extract From The Article
+## Sample Focus
 
 - A `SharedContext` bridge that resolves services from request DI when available and falls back to thread-local storage otherwise.
 - A small `IApiClientFactory` abstraction over `IHttpClientFactory` so background code can create fresh clients instead of sharing instances.
 - Two legacy execution shapes from the article that are easy to demo locally: a raw `Thread` and a `Timer` callback.
 
-## What This Sample Adds
+## Implementation Notes
 
 - A minimal ASP.NET Core app with middleware that captures `RequestServices` for the current request.
 - Endpoints that trigger background work and record the outcome in memory so the behavior is observable.
@@ -63,6 +65,7 @@ Expected output after both calls:
 ]
 ```
 
-## Published Article
+## Notes
 
-[Managing Dependency Injection in Background Threads with SharedContext](https://medium.com/@michael.kopt)
+- The sample keeps the background work synchronous with `Join()` and `ManualResetEventSlim` so the behavior is deterministic during local testing.
+- The pattern is a migration bridge for legacy thread-based code, not a replacement for proper hosted background services.

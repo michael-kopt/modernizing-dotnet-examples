@@ -4,7 +4,7 @@ Article: [Modernizing .NET - Part 1: C# Preprocessor Directives](https://medium.
 
 This sample demonstrates the migration pattern described in the article: one shared codebase compiled by both a `.NET Framework 4.8` project and a `.NET 8` project using explicit custom compilation symbols.
 
-## Key Idea
+## Sample Focus
 
 Instead of relying on predefined symbols like `NETFRAMEWORK` or `NETCOREAPP`, the projects define their own constants:
 
@@ -40,7 +40,7 @@ The shared source file uses three simple sections:
 - code compiled only for `.NET 8`
 - code compiled only for `.NET Framework`
 
-## Project Layout
+## Structure
 
 The article snippets are not runnable on their own, so this folder contains a minimal reproducible example:
 
@@ -60,3 +60,8 @@ dotnet run --project .\src\LegacyApp\LegacyApp.csproj
 ```
 
 If the local machine does not have .NET Framework 4.8 reference assemblies installed, the `LegacyApp` build may require the developer pack.
+
+## Notes
+
+- The sample intentionally uses explicit custom symbols instead of built-in framework symbols.
+- Building `LegacyApp` may require the .NET Framework 4.8 developer pack on the local machine.

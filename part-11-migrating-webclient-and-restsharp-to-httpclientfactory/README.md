@@ -1,6 +1,8 @@
 # Part 11: Migrating WebClient and RestSharp to HttpClientFactory
 
-Article: [Modernizing .NET - Part 11 Migrating WebClient and RestSharp to HttpClientFactory](https://medium.com/@michael.kopt/c3a74091ef19)
+Article: [Modernizing .NET - Part 11 Migrating WebClient and RestSharp to HttpClientFactory](https://medium.com/@michael.kopt/modernizing-net-part-11-migrating-webclient-and-restsharp-to-httpclientfactory-c3a74091ef19)
+
+## Sample Focus
 
 This sample demonstrates two migration targets from the article:
 
@@ -16,7 +18,7 @@ It includes a tiny local API so the client sample can verify:
 - cookie behavior
 - redirect handling
 
-## Layout
+## Structure
 
 - `src/HttpClientFactoryApi` is a small ASP.NET Core API used as the target server
 - `src/HttpClientFactoryClientSample` contains the migrated clients and a console runner

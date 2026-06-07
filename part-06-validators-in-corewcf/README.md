@@ -4,7 +4,7 @@ Article: [Modernizing .NET - Part 6: Validators in CoreWCF](https://medium.com/@
 
 This sample recreates the article's attribute-based SOAP validation pattern for CoreWCF by attaching a custom `IParameterInspector` before the service method executes.
 
-## Key Idea
+## Sample Focus
 
 The article breaks the solution into four pieces:
 
@@ -15,7 +15,7 @@ The article breaks the solution into four pieces:
 
 This sample keeps that structure and demonstrates that invalid SOAP requests are rejected before business logic runs.
 
-## Project Layout
+## Structure
 
 - `src/CoreWcfValidationSample/Validation/AssertAttribute.cs` defines the assertion model
 - `src/CoreWcfValidationSample/Validation/AssertValidator.cs` executes comparisons
@@ -23,7 +23,7 @@ This sample keeps that structure and demonstrates that invalid SOAP requests are
 - `src/CoreWcfValidationSample/Validation/ValidationAttribute.cs` attaches the inspector to the operation
 - `src/CoreWcfValidationSample/Contracts/ISoapService.cs` applies the assertions to `Login`
 
-## What The Sample Does
+## Implementation Notes
 
 The `Login` operation has declarative rules:
 
@@ -63,6 +63,6 @@ Debug endpoints:
 - invalid SOAP requests return a SOAP fault
 - invalid requests do not increase the debug call count
 
-## Note
+## Notes
 
 The article mentions pre-deserialization validation from legacy `SoapExtension` pipelines. CoreWCF does not expose the same raw-XML hook in this sample, so the validation runs before the service method executes but after CoreWCF has mapped inputs to method arguments.

@@ -1,10 +1,10 @@
 # Part 04: WSDL in CoreWCF
 
-Article: [Modernizing .NET - Part 4: WSDL in CoreWCF](https://medium.com/@michael.kopt/3b5e3a390c37)
+Article: [Modernizing .NET - Part 4: WSDL in CoreWCF](https://medium.com/@michael.kopt/modernizing-net-part-4-wsdl-in-corewcf-3b5e3a390c37)
 
 This sample builds on the CoreWCF SOAP service from Part 3 and adds a middleware layer that rewrites the generated WSDL into a shape that is closer to what legacy SOAP clients expect.
 
-## Key Idea
+## Sample Focus
 
 CoreWCF can host the SOAP service, but the generated WSDL often differs from the old `.NET Framework` output in ways that matter to existing clients.
 
@@ -16,14 +16,14 @@ This sample demonstrates the same categories of fixes described in the article:
 - rename binding and port references
 - remove WS-Policy nodes that older clients may mis-handle
 
-## Project Layout
+## Structure
 
 - `src/CoreWcfWsdlSample/Program.cs` wires CoreWCF and the WSDL middleware
 - `src/CoreWcfWsdlSample/Middleware/WsdlCustomizerMiddleware.cs` captures and rewrites the XML
 - `src/CoreWcfWsdlSample/Contracts/ISoapService.cs` defines the SOAP contract
 - `src/CoreWcfWsdlSample/Services/SoapServiceController.cs` implements the SOAP operation
 
-## What The Sample Does
+## Implementation Notes
 
 The service exposes:
 
@@ -57,6 +57,6 @@ Then open:
 
 - `http://localhost:5280/SoapService.asmx?wsdl`
 
-## Caveat
+## Notes
 
 This kind of middleware is a compatibility bridge. It is useful when external consumers are sensitive to WSDL shape, but it also means you now own a custom transformation layer that should be tested whenever the service contract changes.

@@ -2,6 +2,8 @@
 
 Article: [Modernizing .NET - Part 10 Replacing OleDB Excel Reading with ExcelDataReader](https://medium.com/@michael.kopt/modernizing-net-part-10-replacing-oledb-excel-reading-with-exceldatareader-a2cdae1e2cb8)
 
+## Sample Focus
+
 This sample replaces the classic OleDB Excel import pattern with `ExcelDataReader` and demonstrates the same practical tasks covered in the article:
 
 - opening XLS/XLSX files
@@ -10,7 +12,12 @@ This sample replaces the classic OleDB Excel import pattern with `ExcelDataReade
 - exporting a worksheet to a delimited file
 - streaming large files row by row
 
-## Commands
+## Structure
+
+- `src/ExcelDataReaderSample` contains the command-line sample
+- `tests/sample.xlsx` is a small workbook fixture for immediate local testing
+
+## Run
 
 Summary:
 
