@@ -1,0 +1,6 @@
+@WebApplicationMigrationSample_HostAddress = http://localhost:5882
+
+GET {{WebApplicationMigrationSample_HostAddress}}/api/ping
+Accept: application/json
+
+###
