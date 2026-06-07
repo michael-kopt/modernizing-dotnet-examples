@@ -1,0 +1,6 @@
+@AuditPatternSample_HostAddress = http://localhost:5881
+
+GET {{AuditPatternSample_HostAddress}}/audit/entries
+Accept: application/json
+
+###
