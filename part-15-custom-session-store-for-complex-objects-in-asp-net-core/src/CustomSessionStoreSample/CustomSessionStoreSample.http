@@ -1,0 +1,6 @@
+@CustomSessionStoreSample_HostAddress = http://localhost:5883
+
+GET {{CustomSessionStoreSample_HostAddress}}/session/json-attempt
+Accept: application/json
+
+###
