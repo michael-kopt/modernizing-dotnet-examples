@@ -59,7 +59,7 @@ Each article has its own folder with the same part number as the post:
 25. [Part 25: Rate Limiting Concepts and Strategies](https://medium.com/@michael.kopt/modernizing-net-part-25-rate-limiting-concepts-and-strategies-9df1a8a1c7e7) - `part-25-rate-limiting-concepts`
 26. [Part 26: Implementing Rate Limiting Middleware in ASP.NET Core](https://medium.com/@michael.kopt/modernizing-net-part-26-implementing-rate-limiting-middleware-in-asp-net-core-4d8fb87e9930) - `part-26-rate-limiting-middleware`
 27. [Part 27: Cross-Platform String Sorting Nuances](https://medium.com/@michael.kopt/modernizing-net-part-27-cross-platform-string-sorting-nuances-0f4f4a1c6c5a) - `part-27-string-sorting`
-28. Part 28: Diagnosing Linux File Operation Memory Spikes - `part-28-linux-file-memory-spikes` (`draft / not yet published`)
+28. [Part 28: Diagnosing Linux File Operation Memory Spikes](https://medium.com/@michael.kopt/modernizing-net-part-28-diagnosing-linux-file-operation-memory-spikes-08421b69d921) - `part-28-linux-file-memory-spikes`
 
 Recommended convention inside each part:
 
