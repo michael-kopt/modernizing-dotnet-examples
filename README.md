@@ -60,6 +60,8 @@ Each article has its own folder with the same part number as the post:
 26. [Part 26: Implementing Rate Limiting Middleware in ASP.NET Core](https://medium.com/@michael.kopt/modernizing-net-part-26-implementing-rate-limiting-middleware-in-asp-net-core-4d8fb87e9930) - `part-26-rate-limiting-middleware`
 27. [Part 27: Cross-Platform String Sorting Nuances](https://medium.com/@michael.kopt/modernizing-net-part-27-cross-platform-string-sorting-nuances-0f4f4a1c6c5a) - `part-27-string-sorting`
 28. [Part 28: Diagnosing Linux File Operation Memory Spikes](https://medium.com/@michael.kopt/modernizing-net-part-28-diagnosing-linux-file-operation-memory-spikes-08421b69d921) - `part-28-linux-file-memory-spikes`
+29. [Bonus Part 29: System.Web Request and Response Wrappers](https://medium.com/@michael.kopt/%EF%B8%8F-bonus-modernizing-net-part-29-bonus-round-with-system-web-request-and-response-wrappers-0abdec1bae8b) - `part-29-system-web-request-response-wrappers`
+30. [Part 30: Strangler Fig Architecture](https://medium.com/@michael.kopt/modernizing-net-part-30-strangler-fig-architecture-903da2ce1e9a) - `part-30-strangler-fig-architecture`
 
 Recommended convention inside each part:
 
@@ -68,6 +70,7 @@ Recommended convention inside each part:
 Automated test projects are currently included for:
 
 - Parts 22-28
+- Parts 22-30
 
 Earlier parts focus on runnable samples and do not currently include automated test projects.
 
